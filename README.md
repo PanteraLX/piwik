@@ -21,7 +21,7 @@ Make sure you have [docker-compose](http://docs.docker.com/compose/install/) ins
 ```bash
 git clone https://github.com/indiehosters/piwik.git
 cd piwik
-MYSQL_ROOT_PASSWORD=mystrongpassword docker-compose up
+docker-compose up
 ```
 
 You can now access your instance on the port 80 of the IP of your machine (not recommended for production).
@@ -43,7 +43,7 @@ At the `Database Setup` step, please enter the following:
 
   -  Database Server: `db`
   -  Login: `root`
-  -  Password: MYSQL_ROOT_PASSWORD
+  -  Password: passwd
   -  Database Name: piwik (or you can choose)
  
 And leave the rest as default.
