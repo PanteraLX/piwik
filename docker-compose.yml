@@ -10,7 +10,7 @@ services:
     volumes:
       - ./mysql/runtime:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=passwd
     networks:
     - back
   app:
@@ -31,9 +31,11 @@ services:
       - app
     environment:
       - VIRTUAL_HOST
+    ports:
+      - "8001:80"
     networks:
-    - back
-    - lb_web
+      - back
+      - lb_web
   cron:
     image: piwik:fpm
     links:
